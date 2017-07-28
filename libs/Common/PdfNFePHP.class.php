@@ -52,7 +52,7 @@ class PdfNFePHP extends FPDF {
     public function __construct($orientation = 'P', $unit = 'mm', $format = 'A4')
     {
         //passar parametros para a classe principal 
-        parent::FPDF($orientation,$unit,$format);
+        parent::__construct($orientation,$unit,$format);
         // composição dos caracteres do barcode 128
         $this->T128[] = array(2, 1, 2, 2, 2, 2);           //0 : [ ]
         $this->T128[] = array(2, 2, 2, 1, 2, 2);           //1 : [!]
