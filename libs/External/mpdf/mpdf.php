@@ -823,7 +823,7 @@ var $innerblocktags;
 // **********************************
 // **********************************
 
-function mPDF($mode='',$format='A4',$default_font_size=0,$default_font='',$mgl=15,$mgr=15,$mgt=16,$mgb=16,$mgh=9,$mgf=9, $orientation='P') {
+public function __construct($mode='',$format='A4',$default_font_size=0,$default_font='',$mgl=15,$mgr=15,$mgt=16,$mgb=16,$mgh=9,$mgf=9, $orientation='P') {
 
 /*-- BACKGROUNDS --*/
 		if (!class_exists('grad', false)) { include(_MPDF_PATH.'classes/grad.php'); }
@@ -1363,6 +1363,7 @@ function _setPageSize($format, &$orientation) {
 }
 
 function _getPageFormat($format) {
+        $format = false;
 		switch (strtoupper($format)) {
 			case '4A0': {$format = array(4767.87,6740.79); break;}
 			case '2A0': {$format = array(3370.39,4767.87); break;}
@@ -1419,7 +1420,7 @@ function _getPageFormat($format) {
 			case 'A': {$format=array(314.65,504.57 );	 break;}		//	'A' format paperback size 111x178mm
 			case 'DEMY': {$format=array(382.68,612.28 );  break;}		//	'Demy' format paperback size 135x216mm
 			case 'ROYAL': {$format=array(433.70,663.30 );  break;}	//	'Royal' format paperback size 153x234mm
-			default: $format = false;
+			;
 		}
 	return $format;
 }
